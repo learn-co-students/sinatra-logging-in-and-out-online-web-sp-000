@@ -10,18 +10,32 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
-  post '/login' do
-
+  post '/login' do #processes the ^ submited login info
+    @user = User.find_by(:username => params[:username])
+      if @user != nil && @user.password == params[:password]
+        session[:user_id] = @user.id
+        redirect to '/account'
+      else
+        erb :error
+      end
   end
 
   get '/account' do
-
+    #use erb to display the user page
+    #is @user passed in from @current_user above?? 
+    @current_user = User.find_by_id(session[:user_id])
+    if @current_user
+      erb :account
+    else
+      erb :error
+    end
   end
 
   get '/logout' do
+    session.clear
+    redirect to '/'
 
   end
 
 
 end
-
