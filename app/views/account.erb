@@ -6,7 +6,13 @@
     <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
   </head>
   <body id="page-top">
+    <a href="/logout">Log Out</a>
+    <%if @logged_in%>
+    <h1>Welcome <%=@user.username%></h1>
+    <h3>Your Balance: <%=@user.balance%></h3>
     
-
+    <%else%>
+    <a href="/">Log In</a>
+    <%end%>
   </body>
 </html>
