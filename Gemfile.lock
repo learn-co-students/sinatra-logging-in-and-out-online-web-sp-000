@@ -92,7 +92,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord (~> 5.1, >= 5.1.5)
+  activerecord (~> 5.1)
   capybara
   database_cleaner!
   pry
@@ -101,10 +101,10 @@ DEPENDENCIES
   require_all
   rspec
   shotgun
-  sinatra (~> 2.0, >= 2.0.1)
-  sinatra-activerecord (~> 2.0, >= 2.0.13)
-  sqlite3
+  sinatra (~> 2.0)
+  sinatra-activerecord (~> 2.0)
+  sqlite3 (~> 1.3.6)
   thin
 
 BUNDLED WITH
-   1.16.1
+   1.17.3
