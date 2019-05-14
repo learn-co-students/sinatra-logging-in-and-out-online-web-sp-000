@@ -6,7 +6,16 @@
     <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
   </head>
   <body id="page-top">
-    
+  <% require_relative '../helpers/helpers.rb' %>
+  <% if Helpers.is_logged_in?(session) %>
+    <% @user = Helpers.current_user(session) %>
+    <h1>Welcome <%= @user.username %></h1>
+    <h3>Your Balance: <%= @user.balance %></h3>
+
+    If you are done, please <a href="/logout">Log Out</a>.
+  <% else %>
+    Go <a href="/logout">Home</a>.
+  <% end %>
 
   </body>
 </html>
