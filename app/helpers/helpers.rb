@@ -1,7 +1,8 @@
 class Helpers
-  def current_user
+  def current_user(session)
+    binding.pry
   end
 
-  def is_logged_in
+  def is_logged_in?
   end
 end
