@@ -15,22 +15,28 @@ class ApplicationController < Sinatra::Base
     if @user
       session[:user_id] = @user.id 
       redirect '/account'
-    end 
-    redirect '/error'
+    else 
+      #redirect "/error"
+       erb :error
+    end
 
   end
 
   get '/account' do
-    if Helpers.is_logged_in?
-      puts Helpers.current_user
-    end 
-    redirect '/error'
+    if Helpers.is_logged_in?(session)
+      @current = Helpers.current_user(session)
+      
+      
+      erb :account
+    else
+      erb :error
+    end
     
   end
 
   get '/logout' do
     session.clear
-    redirect "/index"
+    redirect "/"
 
   end
 
