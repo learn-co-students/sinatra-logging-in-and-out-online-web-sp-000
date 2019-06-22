@@ -18,12 +18,12 @@ RSpec.configure do |config|
   config.include Capybara::DSL
   #DatabaseCleaner.strategy = :truncation
 
-#  config.before do
-#    DatabaseCleaner.clean
-#  end
+  #config.before do
+    #DatabaseCleaner.clean
+  #end
 
-#  config.after do
-  #  DatabaseCleaner.clean
+  #config.after do
+    #DatabaseCleaner.clean
   #end
 
   config.order = 'default'
