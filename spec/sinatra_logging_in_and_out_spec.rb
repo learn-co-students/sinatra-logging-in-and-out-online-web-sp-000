@@ -49,7 +49,7 @@ describe 'ApplicationController' do
         "username"=> "kittens1265", "password" => "crazycatlady"
       }
       follow_redirect!
-      expect(last_response.body).to include('10000')
+      expect(last_response.body).to include('1000')
     end
 
     it "displays a 'Log Out' link" do
