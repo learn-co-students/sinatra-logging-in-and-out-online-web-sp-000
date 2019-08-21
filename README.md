@@ -1,4 +1,4 @@
-# Sinatra Sessions Lab - User Logins
+ave # Sinatra Sessions Lab - User Logins
 
 ## Introduction
 
