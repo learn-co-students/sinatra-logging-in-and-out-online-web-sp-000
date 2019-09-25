@@ -17,7 +17,7 @@ describe "Helpers" do
       @user1 = User.create(:username => "skittles123", :password => "iluvskittles", :balance => 1000)
 
       session = {
-        :user_id => 1
+        :user_name => 1
       }
       expect(Helpers.is_logged_in?(session)).to eq(true)
     end
