@@ -15,4 +15,8 @@ group :test do
   gem 'capybara'
   gem 'rack-test'
   gem 'database_cleaner'
+  gem 'shotgun'
+  
+  gem 'tux'
+ 
 end
