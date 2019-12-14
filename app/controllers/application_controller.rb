@@ -1,5 +1,7 @@
+require 'pry'
 require_relative '../../config/environment'
 class ApplicationController < Sinatra::Base
+  
   configure do
     set :views, Proc.new { File.join(root, "../views/") }
     enable :sessions unless test?
@@ -10,25 +12,30 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
+
   post '/login' do
-     @user = User.find_by(username: params[:email])
-    if @user && @user.password == params[:password]
-      session[:user_id] = @user.id
+
+    @user = User.find_by(username: params[:username])
+    if @user && @user.password == params[:password]   #if password matches what came in the params hash... 
+ 
+      session[:user_id] = @user.id    #set the session id equal to the user id 
       redirect to '/account'
-     
-    else 
-      redirect to '/error'
-    end 
-  end
+    else
+      erb :error
+    end
+  end	
+  
+  
 
-  get '/account' do
-    erb :account 
-  end
+ get '/account' do
+      erb :account
+ end	  
+  
 
-  get '/sessions/logout' do
+  get '/logout' do
     session.clear
-    redirect '/'
-  end
+    redirect to '/'
+  end	  
 
 
 end
