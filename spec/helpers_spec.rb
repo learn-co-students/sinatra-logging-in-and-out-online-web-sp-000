@@ -1,3 +1,5 @@
+
+
 describe "Helpers" do
 
   describe 'Helpers.current_user' do
@@ -24,3 +26,5 @@ describe "Helpers" do
 
   end
 end
+
+
