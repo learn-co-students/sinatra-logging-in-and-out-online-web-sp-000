@@ -1,4 +1,4 @@
-
+=begin
 
 describe "Helpers" do
 
@@ -27,4 +27,5 @@ describe "Helpers" do
   end
 end
 
+=end
 
