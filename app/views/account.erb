@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang = 'en'>
   <head>
     <meta charset="UTF-8">
     <title>title</title>
     <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
   </head>
   <body id="page-top">
-    <a href="/logout">Sign Out</a>
-    
-
+    <% if Helpers.is_logged_in?(session) %>
+      <p>Hello <%= Helpers.current_user(session).username %></p>
+      <p>Your Balance is $<%= Helpers.current_user(session).balance %></p>
+      <p><a href="/logout">Log Out</a></p>
+    <% end %>
   </body>
 </html>
