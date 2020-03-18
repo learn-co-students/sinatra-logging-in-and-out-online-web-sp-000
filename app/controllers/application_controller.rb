@@ -22,10 +22,8 @@ class ApplicationController < Sinatra::Base
 
   get '/account' do
 
-    binding.pry
-
-    @user = User.find_by(username: params[:username], password: params[:password])
     erb :account
+
   end
 
   get '/logout' do
