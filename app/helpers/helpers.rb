@@ -9,7 +9,7 @@ class Helpers
       !!session[:user_id]
    end 
 
-   def login(username)
+   def self.login(user)
       
    end 
 

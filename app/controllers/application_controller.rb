@@ -7,10 +7,8 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    @user = User.new(username: params[:username], password: params[:password], balance: params[:balance])
-    @user.save 
-    session[:user_id] = @user.id 
-    puts params
+  
+    # puts params
     erb :index
   end
 
@@ -22,19 +20,22 @@ class ApplicationController < Sinatra::Base
     if @user 
       session[:user_id] = @user.id 
       redirect to '/account'
-      
     else 
       erb :error 
     end 
   end
 
   get '/account' do
+    # @user = User.new 
+    # @user.username = params[:username]
+    # @user.balance = params[:balance]
+    # @user.save 
     
     erb :account 
   end
 
   get '/logout' do
-
+    
   end
 
 
