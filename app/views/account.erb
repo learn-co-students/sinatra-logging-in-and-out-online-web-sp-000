@@ -5,8 +5,10 @@
     <title>title</title>
     <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
   </head>
-  <p>Welcome, <%= @user.username %>
-
+    <% if Helpers.is_logged_in?(session)%>
+    <h1>Welcome, <%= @user.username %><h1>
+    <h3>Your balance is <%= @user.balance %></h3>
+    <% end %>
  
   </body>
 </html>

@@ -7,18 +7,18 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-  
+    
     # puts params
     erb :index
   end
 
   post '/login' do
     #raise params[:username].inspect
-    #binding.pry
-   
-    @user = User.find_by(username: params[:username])
-    if @user 
-      session[:user_id] = @user.id 
+    #binding 
+    
+    if @user = User.find_by(username: params[:username])
+
+      session[:user_id] = @user.id
       redirect to '/account'
     else 
       erb :error 
@@ -26,10 +26,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/account' do
-    # @user = User.new 
-    # @user.username = params[:username]
-    # @user.balance = params[:balance]
-    # @user.save 
+    #raise params.inspect
     
     erb :account 
   end
