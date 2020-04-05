@@ -10,18 +10,32 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
+  #find user and send them to their account page, or redirect to error page
   post '/login' do
-
+  #binding.pry
+    @user = User.find_by(username: params[:username])
+    if @user != nil
+        session[:user_id] = @user.id
+        redirect '/account'
+    else
+      erb :error
+    end
   end
 
   get '/account' do
-
+    #binding.pry
+    @current_user = User.find_by(id: session[:user_id])
+    if @current_user !=nil
+      erb :account
+    else
+      erb :error
+    end
   end
 
   get '/logout' do
-
+    session.clear
+    redirect '/'
   end
 
 
 end
-
