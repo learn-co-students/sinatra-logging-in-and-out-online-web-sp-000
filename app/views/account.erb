@@ -9,8 +9,9 @@
 
     <%= @user.username %>
     <%= @user.password %>
-    <input type="text" value="Log Out">
-    <% session.clear %>  
+    <form method="post" action="/">
+    <a href="/sessions/logout" value="Log Out"> </a>
+  </form>
 
   </body>
 </html>
