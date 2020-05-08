@@ -1,16 +1,18 @@
 require 'pry'
 class Helpers
-# binding.pry
+
   def self.current_user(session)
-    @user = User.find_by(session[:id])
+    #  binding.pry
+    @user = User.find(session[:user_id])
       # binding.pry
   end
 
   def self.is_logged_in?(session)
     # binding.pry
-    if session[:id] == nil
-      return true
-    end
+     !!self.current_user(session)
+    # # if session[:user_id] == nil
+    #   return true
+    # end
   end
 
 end
