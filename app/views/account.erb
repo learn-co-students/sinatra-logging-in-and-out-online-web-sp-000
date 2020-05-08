@@ -6,10 +6,12 @@
     <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">
   </head>
   <body id="page-top">
+  <input type="text" name="username"id="username"> Welcome <%= @username %> </input>
+<% binding.pry %>
 
-    <%= @user.username %>
-    <%= @user.password %>
-    <form method="post" action="/">
+    <form method="post" action="/login">
+      <input type="text" name="username">  </input>
+
     <a href="/sessions/logout" value="Log Out"> </a>
   </form>
 
