@@ -1,7 +1,5 @@
 class Helpers
   
-  attr_accessor :user
-  
   def self.current_user(ses)
     @user = User.find(ses[:user_id])
   end
