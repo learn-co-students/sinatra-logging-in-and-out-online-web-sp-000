@@ -3,11 +3,21 @@
   <head>
     <meta charset="UTF-8">
     <title>title</title>
-    <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
+    <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">
   </head>
   <body id="page-top">
     <h1>Welcome to FlatBank</h1>
     <h3>Log In Please</h3>
-
+    <form action="/login" method="post">
+         <br><lable > Username: <input type="text" name= "username"></lable>
+         <br><lable > Password: <input type="text" name= "password"></lable>
+         <input type="submit" id="login">
+       </form>
   </body>
 </html>
+
+<%-#this is the front page that you begin with -%>
+<%-# title, link to css stylesheets, welcome, log in, username/password -%>
+<%-# http post method form tag, input tag, submit button-%>
+<%-# get form tag would be public info, post tags are for passwords -%>
+<%-# form method tells the form what kind of request, form action tells what route the post request should be sent to -%>
