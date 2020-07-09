@@ -9,9 +9,9 @@
   
   
 
-  Welcome <%= @user.username %>
+  <h1>Welcome <%= @user.username %></h1>
 
-  <%= @user.balance %>
+  <h3>Your Balance: <%= @user.balance.to_f %></h3>
 
   <form method="POST" action="/logout">
 
