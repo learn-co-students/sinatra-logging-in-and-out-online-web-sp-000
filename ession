@@ -1,0 +1,15 @@
+
+[1mFrom:[0m /home/ting682/flatiron/labs/sinatra-logging-in-and-out-online-web-sp-000/app/controllers/application_controller.rb @ line 29 self.GET /account:
+
+    [1;34m24[0m:     [32mend[0m
+    [1;34m25[0m:     
+    [1;34m26[0m:   [32mend[0m
+    [1;34m27[0m: 
+    [1;34m28[0m:   get [31m[1;31m'[0m[31m/account[1;31m'[0m[31m[0m [32mdo[0m
+ => [1;34m29[0m:     binding.pry
+    [1;34m30[0m:     [32mif[0m [1;34;4mHelpers[0m.is_logged_in?(session)
+    [1;34m31[0m:       @user = [1;34;4mUser[0m.find(session[[33m:user_id[0m])
+    [1;34m32[0m:       erb [33m:account[0m 
+    [1;34m33[0m:     [32melse[0m
+    [1;34m34[0m:       erb [33m:[1;33m'[0m[33m/error[1;33m'[0m[33m[0m
+

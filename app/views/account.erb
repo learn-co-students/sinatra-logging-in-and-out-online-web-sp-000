@@ -6,7 +6,18 @@
     <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
   </head>
   <body id="page-top">
-    
+  
+  
+
+  <h1>Welcome <%= @user.username %></h1>
+
+  <h3>Your Balance: <%= @user.balance.to_f %></h3>
+
+  <form method="POST" action="/logout">
+
+    <input type="submit" id="submit" value="Log Out">
+  </form>
+
 
   </body>
 </html>
