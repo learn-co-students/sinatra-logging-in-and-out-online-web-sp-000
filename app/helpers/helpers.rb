@@ -9,10 +9,6 @@ class Helpers
     end
 
     def self.is_logged_in?(hash)
-        # binding.pry
-        if hash[:user_id]
-           return true
-        end
-        false
+        !!hash[:user_id]
     end
 end
