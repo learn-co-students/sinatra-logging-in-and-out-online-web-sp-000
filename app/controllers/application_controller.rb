@@ -28,15 +28,16 @@ class ApplicationController < Sinatra::Base
     #   erb :account
     # end
     # binding.pry
-    @user = User.find_by_id(session[:user_id])
-    # binding.pry
+    # @user = User.find_by_id(session[:user_id])
+    @user = Helpers.current_user(session)
     erb :account
-    end
+    else
     erb :error
-    end
+    end  
+  end
 
   get '/logout' do
-
+    session.clear
     redirect '/'
   end
 
