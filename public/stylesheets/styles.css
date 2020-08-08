@@ -1,0 +1,15 @@
+h1 {
+  background-color: #b37700;
+}
+h2 {
+  background-color: #cc8800;
+}
+h3 {
+  background-color: #e69900;
+}
+h3 {
+  background-color: #ffaa00;
+}
+h1, h2 , h3, h4 {
+  text-shadow: 1px 1px 2px pink;
+}
