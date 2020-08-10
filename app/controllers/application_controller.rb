@@ -1,5 +1,7 @@
 require_relative '../../config/environment'
+
 class ApplicationController < Sinatra::Base
+
   configure do
     set :views, Proc.new { File.join(root, "../views/") }
     enable :sessions unless test?
@@ -20,15 +22,16 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/account' do
-
+    @current_user = User.find_by_id(session[:user_id])
+    if @current_user
+      erb :account
+    else
+      erb :error
+    end
   end
 
   get '/logout' do
    session.clear
    redirect to '/'
   end
-
-
 end
-
-#why don't i have to create an instance of the user using params anywhere
