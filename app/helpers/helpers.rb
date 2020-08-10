@@ -5,6 +5,7 @@ class Helpers
     def self.current_user(session)
         @user = User.find_by_id(session[:user_id])
     end
+    # uses session[:user_id] to find the user in the database
 
     def is_logged_in?
         !!session[:user_id]

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,7 +9,18 @@
   </head>
 
   <body id="page-top">
+    <h1>
+      <% if Helpers.is_logged_in?(session)%>
+          <%= Helpers.current_user(session).username %>
+          <%= Helpers.current_user(session).balance %>
+
+      <% end %>
+    </h1>
     <h4><a href='/logout'>Log Out</h4>
+    #use is_logged_in? to display username and balance if user is logged in ( use current_user to display this)
+    # otherwise have a link that goes to the homepage
   </body>
-  
+
 </html>
+
+# how does this file know what Helpers class is? why not need to require file at top?
