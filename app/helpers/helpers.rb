@@ -4,8 +4,8 @@ class Helpers < ActiveRecord::Base
     end
 
     def self.is_logged_in?(session)
-        if User.find(session[:user_id])
-            return true
+        if session[:user_id] && User.find(session[:user_id])
+          return true
         end
     end
 
