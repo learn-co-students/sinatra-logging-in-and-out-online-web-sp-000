@@ -2,11 +2,19 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>title</title>
+    <title>Your Account</title>
     <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
   </head>
+  
+  <%if Helpers.is_logged_in?(session)%>
   <body id="page-top">
-    
-
+    <h1>Welcome <%= Helpers.current_user(session).username %></h1>
+    <h3>Your Balance: <%= Helpers.current_user(session).balance %></h3>
+    <a href="/logout">Log Out</a>
   </body>
+  <%else%>
+  <h1>You are not logged in!</h1>
+  <p>You Must <a href="/">Log In</a> to View Your Balance</p>
+  <% end %>
+
 </html>
