@@ -11,7 +11,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/login' do
-    User.all.each do |user|
+    User.all.find do |user|
       if user.username == params[:username] && user.password == params[:password]
         session[:user_id] = user.id
         redirect to '/account'
@@ -21,7 +21,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/account' do
-    @current_user = Helper.current_user(session)
+    @current_user = Helpers.current_user(session)
     @current_user ? erb(:account) : erb(:error) 
   end
 
