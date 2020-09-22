@@ -10,9 +10,10 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
-  post '/login' do
+  post '/login' do #form data come here
     @user = User.find_by(username: params["username"], password: params["password"])
       if @user
+        binding.pry
         session[:user_id] = @user.id
       redirect to '/account'
     else
