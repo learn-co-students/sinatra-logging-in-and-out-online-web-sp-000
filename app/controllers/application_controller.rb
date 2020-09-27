@@ -11,15 +11,29 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/login' do
-
+    @novi = User.new(username: "Milos", password: "haha1", balance: 0.14)
+    @novi.save
+    @user = User.find_by(username: params[:username], password: params[:password])
+    if @user != nil && @user.password == params[:password]
+      session[:user_id] = @user.id
+      redirect to '/account'
+    end
+    erb :error
+    
   end
 
   get '/account' do
-
+    @current_user = User.find_by_id(session[:user_id])
+    if @current_user
+      erb :account
+    else
+      erb :error
+    end
   end
 
   get '/logout' do
-
+    session.clear
+    redirect to '/'
   end
 
 
