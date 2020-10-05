@@ -14,8 +14,8 @@ class ApplicationController < Sinatra::Base
 
   post '/login' do
     user = User.find_by(username: params[:username], password: params[:password])
-              binding.pry
     if user.instance_of? User
+      session[:user_id] = user[:id]
       redirect to '/account'
     else
       erb :error
@@ -24,6 +24,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/account' do
+    # @user = User.find_by(username: params[:username])
     erb :account
   end
 
