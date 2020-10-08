@@ -6,6 +6,16 @@
     <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
   </head>
   <body id="page-top">
+  <% if self.is_logged_in?(session) == true %>
+  <h2><%= @username %></h2>
+  <h2><%= @user_balance %></h2>
+  <% else %>
+  <h2><a href="/">Home Page</a><h2>
+  <% end %>
+
+
+
+  <a href="/logout">Log Out</a>
     
 
   </body>
