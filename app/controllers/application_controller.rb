@@ -18,18 +18,19 @@ class ApplicationController < Sinatra::Base
     else
       erb :error
     end  
-
   end
 
   get '/account' do
-
-    erb :account
+    if Helpers.current_user(session) # the user has an account
+      erb :account
+    else
+      erb :error
+    end  
  end
 
   get '/logout' do
     session.clear
     redirect to '/'
-
   end
 
 
