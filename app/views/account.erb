@@ -6,7 +6,10 @@
     <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
   </head>
   <body id="page-top">
-    
+      <h1>Welcome <%= @user.username %></h1>
+      <% user_balance = @user.balance.to_f %>
+      <h3>Your Balance: <%= user_balance %></h3>
+  <a href="/sessions/logout">Log Out</a>
 
   </body>
 </html>
