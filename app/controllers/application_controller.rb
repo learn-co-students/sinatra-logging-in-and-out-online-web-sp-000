@@ -26,8 +26,7 @@ class ApplicationController < Sinatra::Base
 
   get '/account' do
     # displays the account information if a user is logged in
-    @user = User.find_by(username: params[:username], password: params[:password])
-    if session[:user_id] = @user.id
+    if Helpers.is_logged_in?(session)
       redirect '/account'
     else
       # shows the error page if user goes directly to /account
