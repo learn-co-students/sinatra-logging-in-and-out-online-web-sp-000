@@ -25,13 +25,11 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/account' do
-    # displays the account information if a user is logged in
     @user = User.find_by(id: session[:user_id])
     if @user
-      redirect '/account'
+      erb :account
     else
-      # shows the error page if user goes directly to /account
-      redirect '/error'
+      erb :error
     end
   end
 
