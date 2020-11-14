@@ -6,6 +6,15 @@
     <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
   </head>
   <body id="page-top">
+  <% if @user.is_logged_in?(session)&& @user.current_user(session) %> 
+  <p><%= @user.username %></p><br>
+  <p><%= @user.balance %></p>
+  <% else %> 
+  <% redirect 'views/index' %> 
+  <% end %>
+  <br>
+  <br>
+  <a href="/logout">Log Out</a>
     
 
   </body>
