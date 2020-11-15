@@ -6,11 +6,10 @@
     <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
   </head>
   <body id="page-top">
-  <% if @user.is_logged_in?(session)&& @user.current_user(session) %> 
-  <p><%= @user.username %></p><br>
-  <p><%= @user.balance %></p>
-  <% else %> 
-  <% redirect 'views/index' %> 
+  <% if Helpers.current_user(session) && Helpers.is_logged_in?(session) %> 
+  <p><%=  "#{self.username}" %></p>
+  <p><%=  "#{self.balance}" %></p> 
+  binding.pry
   <% end %>
   <br>
   <br>
