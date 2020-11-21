@@ -1,0 +1,15 @@
+
+[1mFrom:[0m /mnt/c/Users/bczor/dev/flatiron/labs/sinatra-logging-in-and-out-online-web-sp-000/app/controllers/application_controller.rb @ line 28 self.GET /account:
+
+    [1;34m23[0m:   [32mend[0m
+    [1;34m24[0m: 
+    [1;34m25[0m: 
+    [1;34m26[0m:   get [31m[1;31m'[0m[31m/account[1;31m'[0m[31m[0m [32mdo[0m
+    [1;34m27[0m:     [32mif[0m !!session[[33m:user_id[0m] == [1;36mtrue[0m
+ => [1;34m28[0m:       binding.pry
+    [1;34m29[0m:       erb [33m:account[0m
+    [1;34m30[0m:     [32melse[0m
+    [1;34m31[0m:       erb [33m:error[0m
+    [1;34m32[0m:     [32mend[0m
+    [1;34m33[0m: 
+
