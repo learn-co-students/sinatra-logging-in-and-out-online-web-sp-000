@@ -7,6 +7,12 @@
   </head>
   <body id="page-top">
     
+      <% if Helpers.is_logged_in?(session) %>
+      <h1>Welcome <%= Helpers.current_user(session).username %></h1> <br>
+      <h3>Your Balance: <%= Helpers.current_user(session).balance %></h3> <br>
+      <% end %>
+    Click <a href='/'> here </a> to go back to the homepage <br>
 
+  <a href='/logout'> Log Out </a>
   </body>
 </html>
