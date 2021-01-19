@@ -59,7 +59,7 @@ describe 'ApplicationController' do
       follow_redirect!
       expect(last_response.body).to include('Log Out')
     end
-
+ 
 
     it "shows the error page if username and ID do not match available users" do
       post '/login', {
