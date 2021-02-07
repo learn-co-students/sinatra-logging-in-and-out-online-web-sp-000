@@ -1,13 +1,16 @@
+require 'pry'
 class Helpers
-    def current_user(session)
-        User.find(session[:user_id])
+    def self.current_user(session)
+        
+        user = User.find(session[:user_id])
+        
+        user
     end
 
-    def is_logged_in?(session)
-        if session.include?(session[:user_id])
+    def self.is_logged_in?(session)
+     
+        if current_user(session).id == session[:user_id]
             true
-        else
-            false
         end
         
     end
