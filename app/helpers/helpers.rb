@@ -1,6 +1,6 @@
 class Helpers
-    def self.current_user(session)
-        @current_user ||= User.find_by_id(session[:user_id])
+    def self.current_user(session) # sets a variabl'e value, if it's value is nil or false in Ruby.
+        @current_user ||= User.find_by_id(session[:user_id]) # behavels like a || a = b
     end
 
     def self.is_logged_in?(session)
