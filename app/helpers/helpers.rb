@@ -4,6 +4,6 @@ class Helpers
     end
 
     def self.is_logged_in?(session)
-        !!session[:user_id] # if session[:user_id] has a value, than the first bang operator it changes the truth value
+        !!session[:user_id] # if session[:user_id] has a value, than the first bang operator changes the truthy value
     end # the double bang operator essentially says, if it's truthy return truthy if it's falsey return falsey
 end
