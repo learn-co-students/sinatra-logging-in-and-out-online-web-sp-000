@@ -68,7 +68,7 @@ describe 'ApplicationController' do
       expect(last_response.body).to include('You Must <a href="/">Log In</a> to View Your Balance')
     end
   end
-
+  
   describe "GET '/account'" do
     it "shows the error page if user goes directly to /account" do
       get '/account'
