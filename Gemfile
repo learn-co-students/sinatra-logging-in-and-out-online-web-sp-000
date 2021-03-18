@@ -16,3 +16,10 @@ group :test do
   gem 'rack-test'
   gem 'database_cleaner'
 end
+
+group :development do
+  gem 'shotgun'
+  gem 'pry'
+  gem 'tux'
+  gem 'sqlite3', '~> 1.3.6'
+end
